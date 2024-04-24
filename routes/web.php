@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\GeografiController;
+use App\Http\Controllers\PariwisataController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SejarahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +20,8 @@ Route::get('/', function () {
     return view('layout.main');
 });
 
-Route::get('/sejarah',function(){
-    return view('layout.content.sejarah');
-});
+Route::get('/sejarah',[SejarahController::class,'index']);
 
-Route::get('/geografi',function(){
-    return view('layout.content.geografi');
-});
+Route::get('/geografi',[GeografiController::class,'index']);
+
+Route::get('/pariwisata',[PariwisataController::class,'index']);

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
-    <title>Form</title>
+    <title>{{ $title ?? 'Laravel' }}</title>
 
 </head>
 <body>
@@ -22,6 +22,7 @@
  <div class="p-4 sm:ml-64">
     <div class="ml-5 mt-5 w-[100%] px-10 flex justify-center flex-col text-center">
         @yield('content')
+        @include('layout.footer')
     </div>
  </div>
 </body>

@@ -1,65 +1,47 @@
 @extends('layout.main')
 @section('content')
 <div>
-    <div class="px-4 sm:px-0 text-left">
-      <h3 class="text-base font-semibold leading-7 text-gray-900">Applicant Information</h3>
-      <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Personal details and application.</p>
+    <div class="text-left">
+      <h3 class="mt-[2.9rem] text-3xl pl-10 font-semibold hover:text-blue-400 hover:transition-all text-center">Geografi Kota</h3>
     </div>
     <div class="mt-6 border-t border-gray-100 text-left">
       <dl class="divide-y divide-gray-100">
         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Full name</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Margot Foster</dd>
+          <dt class="text-2xl font-medium leading-6 text-gray-900">Nama Kota</dt>
+          <dd class="mt-1 text-2xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Tulungagung</dd>
         </div>
         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Application for</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Backend Developer</dd>
+            <dt class="text-2xl font-medium leading-6 text-gray-900">Batas Wilayah:</dt>
+        </div>
+        <div class="ml-12">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-xl font-medium leading-6 text-gray-500">1.Utara</dt>
+                <dd class="mt-1 text-xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Kabupaten Kediri dan Kabupaten Nganjuk</dd>
+              </div>
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt class="text-xl font-medium leading-6 text-gray-500">2.Selatan</dt>
+                  <dd class="mt-1 text-xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Samudera Hindia</dd>
+              </div>
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt class="text-xl font-medium leading-6 text-gray-500">3. Barat</dt>
+                  <dd class="mt-1 text-xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Kabupaten Trenggalek dan Kabupaten Ponorogo</dd>
+              </div>
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt class="text-xl font-medium leading-6 text-gray-500">4. Timur</dt>
+                  <dd class="mt-1 text-xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Kabupaten Bitar</dd>
+              </div>
         </div>
         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Email address</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">margotfoster@example.com</dd>
+          <dt class="text-2xl font-medium leading-6 text-gray-900">Topografi</dt>
+          <dd class="mt-1 text-2xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+            <p>Secara topografi, Tulungagung terletak pada ketinggian 85 m di atas permukaan laut (dpl). Bagian barat laut Kabupaten Tulungagung merupakan daerah pegunungan yang merupakan bagian dari pegunungan Wilis-Liman. Bagian tengah adalah dataran rendah, sedangkan bagian selatan adalah pegunungan yang merupakan rangkaian dari Pegunungan Kidul. Di sebelah barat laut Tulungagung, tepatnya di Kecamatan Sendang, terdapat Gunung Wilis sebagai titik tertinggi di Kabupaten Tulungagung yang memiliki ketinggian 2552 m. Di tengah Kota Tulungagung, terdapat Kali Ngrowo yang merupakan anak Kali Brantas dan seolah membagi Kota Tulungagung menjadi dua bagian: utara dan selatan. Kali ini sering disebut dengan Kali Parit Raya dari rangkaian Kali Parit Agung.</p>
+          </dd>
         </div>
+
         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Salary expectation</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">$120,000</dd>
-        </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">About</dt>
-          <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>
-        </div>
-        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
-          <dd class="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-            <ul role="list" class="divide-y divide-gray-100 rounded-md border border-gray-200">
-              <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
-                <div class="flex w-0 flex-1 items-center">
-                  <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
-                  </svg>
-                  <div class="ml-4 flex min-w-0 flex-1 gap-2">
-                    <span class="truncate font-medium">resume_back_end_developer.pdf</span>
-                    <span class="flex-shrink-0 text-gray-400">2.4mb</span>
-                  </div>
-                </div>
-                <div class="ml-4 flex-shrink-0">
-                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
-                </div>
-              </li>
-              <li class="flex items-center justify-between py-4 pl-4 pr-5 text-sm leading-6">
-                <div class="flex w-0 flex-1 items-center">
-                  <svg class="h-5 w-5 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z" clip-rule="evenodd" />
-                  </svg>
-                  <div class="ml-4 flex min-w-0 flex-1 gap-2">
-                    <span class="truncate font-medium">coverletter_back_end_developer.pdf</span>
-                    <span class="flex-shrink-0 text-gray-400">4.5mb</span>
-                  </div>
-                </div>
-                <div class="ml-4 flex-shrink-0">
-                  <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Download</a>
-                </div>
-              </li>
-            </ul>
+          <dt class="text-2xl font-medium leading-6 text-gray-900">Iklim</dt>
+          <dd class="mt-1 text-2xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+            <p>Wilayah Kabupaten Tulungagung menurut klasifikasi iklim Koppen beriklim tropis basah dan kering (Aw) dengan dua musim, yaitu musim penghujan dan musim kemarau. Musim penghujan di wilayah Tulungagung berlangsung pada periode November hingga April dengan bulan terbasah adalah Januari yang curah hujan bulanannya lebih dari 270 mm per bulan. Sedangkan, musim kemarau berlangsung pada periode Mei hingga Oktober dengan bulan terkering adalah Agustus yang curah hujan bulanannya kurang dari 20 mm per bulan. Suhu udara di wilayah Tulungagung bervariasi antara 21°–32 °C. Curah hujan tahunan di wilayah Tulungagung berkisar pada angka 1.400–1.800 mm per tahun dengan jumlah hari hujan berkisar antara 90–120 hari hujan per tahun.</p>
           </dd>
         </div>
       </dl>
