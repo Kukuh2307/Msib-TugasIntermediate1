@@ -1,16 +1,12 @@
 @extends('layout.main')
 @section('content')
-<h3 class="mt-[2.9rem] text-3xl pl-10 font-semibold hover:text-blue-400 hover:transition-all">SEJARAH</h3>
-<div class="text-2xl pt-5 text-justify">
-    <p>Pada 1205 Masehi, masyarakat Thani Lawadan di selatan Tulungagung, mendapatkan penghargaan dari Raja Daha terakhir, Kertajaya, atas kesetiaan mereka kepada Raja ketika terjadi serangan musuh dari timur Daha. Penghargaan tersebut tercatat dalam Prasasti Lawadan dengan candra sengkala "Sukra Suklapaksa Mangga Siramasa" yang menunjuk tanggal 18 November 1205 M. Tanggal keluarnya prasasti tersebut akhirnya dijadikan sebagai hari jadi Kabupaten Tulungagung sejak tahun 2003.</p>
-</div>
-<div class="text-2xl pt-5 text-justify">
-    <p>Di Desa Boyolangu, terdapat Candi Gayatri. Candi ini adalah tempat untuk mencandikan Gayatri (Sri Rajapatni), istri keempat Raja Majapahit yang pertama, Raden Wijaya (Kertarajasa Jayawardhana), dan merupakan ibu dari Ratu Majapahit ketiga, Sri Gitarja (Tribhuwanatunggadewi), sekaligus nenek dari Hayam Wuruk (Rajasanegara), raja yang memerintah Kerajaan Majapahit pada masa keemasannya. Nama Boyolangu itu sendiri tercantum dalam Kitab Nagarakertagama yang menyebutkan nama Bayalangu/Bhayalango (bhaya = bahaya, alang = penghalang) sebagai tempat untuk menyucikan dia.</p>
-</div>
-<div class="text-2xl pt-5 text-justify">
-    <p>Versi pertama adalah nama "Tulungagung" dipercaya berasal dari kata "Pitulungan Agung" (Tulang Gunung). Nama ini berasal dari peristiwa saat seorang pemuda dari Gunung Wilis bernama Joko Baru mengeringkan sumber air di Ngrowo (Kabupaten Tulungagung tempo dulu) dengan menyumbat semua sumber air tersebut dengan lidi dari sebuah pohon enau atau aren. Joko Baru dikisahkan sebagai seorang pemuda yang dikutuk menjadi ular oleh ayahnya, orang sekitar kerap menyebutnya dengan Baru Klinthing. Ayahnya mengatakan bahwa untuk kembali menjadi manusia sejati, Joko Baru harus mampu melingkarkan tubuhnya di Gunung Wilis. Namun, malang menimpanya karena tubuhnya hanya kurang sejengkal untuk dapat benar-benar melingkar sempurna. Alhasil Joko Baru menjulurkan lidahnya. Disaat yang bersamaan, ayah Joko Baru memotong lidahnya. Secara ajaib, lidah tersebut berubah menjadi tombak sakti yang hingga saat ini dipercaya sebagai "gaman" atau "senjata sakti". Tombak ini masih disimpan dan dirawat hingga saat ini oleh masyarakat sekitar.</p>
-</div>
-<div class="text-2xl pt-5 text-justify">
-    <p>Sedangkan, versi kedua nama Tulungagung berasal dua kata, tulung dan agung, tulung artinya sumber yang besar, sedangkan agung artinya besar. Dalam pengartian berbahasa Jawa tersebut, Tulungagung adalah daerah yang memiliki sumber air yang besar. Sebelum dibangunnya Terowongan Neyama di Tulungagung bagian selatan oleh tentara Jepang, di Tulungagung sangat mudah ditemui rawa. Pada masa lalu, karena terlalu banyaknya sumber air di sana, banyak kawasan yang tergenang air, baik di musim kemarau maupun musim hujan. Dugaan yang paling kuat mengenai etimologi nama kabupaten ini adalah versi kedua, penamaan nama ini dimulai ketika ibu kota Tulungagung mulai pindah ke tempat sekarang ini. Sebelumnya ibu kota Tulungagung bertempat di daerah Kalangbret dan diberi nama Kadipaten Ngrowo (Ngrowo juga berarti sumber air). Perpindahan ini terjadi sekitar tahun 1901 Masehi.</p>
-</div>
+    <h3 class="mt-[2.9rem] text-3xl pl-10 font-semibold hover:text-blue-400 hover:transition-all">{{ $judul }}</h3>
+    @php
+    $sejarah = $data->sejarah;
+    $paragraphs = explode('</p>', $sejarah);
+    foreach ($paragraphs as $paragraph) {
+        echo '<div class="text-2xl pt-5 text-justify">' . $paragraph . '</div>';
+    }
+    @endphp
+
 @endsection
