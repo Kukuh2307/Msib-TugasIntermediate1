@@ -1,10 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GeografiController;
 use App\Http\Controllers\PariwisataController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SejarahController;
-
+use App\Http\Controllers\BeachController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,11 @@ use App\Http\Controllers\SejarahController;
 Route::get('/', function () {
     return view('layout.main');
 });
+
+Route::get('/beach',[BeachController::class,'index'])->name('beach.index');
+Route::get('/beach/create',[BeachController::class,'create'])->name('beach.create');
+Route::post('/beach/store',[BeachController::class,'store'])->name('beach.store');
+Route::delete('/beach/{id}', [BeachController::class, 'destroy'])->name('beach.destroy');
 
 Route::get('/sejarah',[SejarahController::class,'index']);
 
