@@ -1,4 +1,4 @@
-<footer class="bg-gray-800 text-white p-10 mt-10 w-full">
+<footer class="bg-gray-800 text-white p-10 mt-10">
     <div class="container flex justify-between items-center">
       <div class="flex items-center">
         <svg class="w-12 h-12 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-5.0 -10.0 110.0 135.0">

@@ -1,4 +1,5 @@
 @extends('layout.main')
+
 @section('content')
     <div class="text-left">
       <h3 class="mt-[2.9rem] text-3xl pl-10 font-semibold hover:text-blue-400 hover:transition-all text-center">{{ $judul }}</h3>
@@ -14,11 +15,11 @@
         </div>
         <div class="ml-12">
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                <dt class="text-xl font-medium leading-6 text-gray-500">1.Utara</dt>
+                <dt class="text-xl font-medium leading-6 text-gray-500">1. Utara</dt>
                 <dd class="mt-1 text-xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $data->batasUtara }}</dd>
               </div>
               <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                  <dt class="text-xl font-medium leading-6 text-gray-500">2.Selatan</dt>
+                  <dt class="text-xl font-medium leading-6 text-gray-500">2. Selatan</dt>
                   <dd class="mt-1 text-xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{ $data->batasSelatan }}</dd>
               </div>
               <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -45,5 +46,4 @@
         </div>
       </dl>
     </div>
-  </div>
-  @endsection  
+@endsection

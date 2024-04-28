@@ -5,6 +5,7 @@ use App\Http\Controllers\GeografiController;
 use App\Http\Controllers\PariwisataController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\BeachController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,9 +21,20 @@ Route::get('/', function () {
     return view('layout.main');
 });
 
+Route::get('/login', [AuthController::class, 'index'])->name('index');
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+// index pantai
 Route::get('/beach',[BeachController::class,'index'])->name('beach.index');
+// create
 Route::get('/beach/create',[BeachController::class,'create'])->name('beach.create');
+// menyimpan
 Route::post('/beach/store',[BeachController::class,'store'])->name('beach.store');
+// tampilan edit
+Route::get('beach/{id}',[BeachController::class,'edit'])->name('beach.edit');
+// edit database
+Route::put('beach/{id}',[BeachController::class,'update'])->name('beach.update');
+// hapus database
 Route::delete('/beach/{id}', [BeachController::class, 'destroy'])->name('beach.destroy');
 
 Route::get('/sejarah',[SejarahController::class,'index']);

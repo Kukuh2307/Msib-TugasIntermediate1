@@ -23,7 +23,8 @@ class BeachController extends Controller
      */
     public function create()
     {
-        return view('layout.beach.create');
+        return view('layout.beach.create')->with([
+            "judul" => "Tambah Pantai"]);
     }
 
     /**
@@ -69,16 +70,52 @@ class BeachController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $beachEdit = Beach::where('id', $id)->first();
+        return view('layout.beach.edit')->with([
+            "judul" => "Edit Pantai",
+            'data' => $beachEdit
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(Request $request, $id)
+{
+    $request->validate([
+        'nama' => 'required',
+        'deskripsi' => 'required',
+        'lokasi' => 'required',
+        'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ], [
+        'nama.required' => 'Nama harus diisi',
+        'deskripsi.required' => 'Deskripsi harus diisi',
+        'lokasi.required' => 'Lokasi harus diisi',
+        'gambar.mimes' => 'Gambar harus berupa jpeg, png, jpg, gif, atau svg',
+        'gambar.max' => 'Gambar tidak boleh lebih dari 2 MB',
+    ]);
+
+    $beach = Beach::findOrFail($id);
+
+    $data = $request->except('_token', '_method');
+
+    if ($request->hasFile('gambar')) {
+        // Hapus gambar lama jika bukan default
+        if ($beach->gambar != 'default.jpg') {
+            unlink(public_path('Pantai/' . $beach->gambar));
+        }
+
+        // Upload gambar baru
+        $namaGambar = $request->file('gambar')->hashName();
+        $request->file('gambar')->move(public_path('Pantai'), $namaGambar);
+        $data['gambar'] = $namaGambar;
     }
+
+    $beach->update($data);
+
+    return redirect()->route('beach.index')->with('success', 'Pantai berhasil diubah');
+}
+
 
     /**
      * Remove the specified resource from storage.

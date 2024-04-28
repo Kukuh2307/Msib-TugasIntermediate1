@@ -68,7 +68,7 @@
                     </span>
                 </td>                   
                 <td class="px-6 py-4 whitespace-nowrap  text-sm font-medium">
-                    <a href="#" class="text-indigo-600 bg-indigo-100 px-4 py-2 rounded-md hover:text-indigo-900">Edit</a>
+                    <a href="{{ route('beach.edit', $d->id) }}" class="text-indigo-600 bg-indigo-100 px-4 py-2 rounded-md hover:text-indigo-900">Edit</a>
                     <form action="{{ route('beach.destroy', $d->id) }}" method="POST" class="inline">
                         @csrf
                         @method('DELETE')
