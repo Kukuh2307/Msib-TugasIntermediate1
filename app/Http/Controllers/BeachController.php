@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Beach;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BeachController extends Controller
 {
@@ -70,7 +71,8 @@ class BeachController extends Controller
      */
     public function edit(string $id)
     {
-        $beachEdit = Beach::where('id', $id)->first();
+
+        $beachEdit = Beach::findOrFail($id);
         return view('layout.beach.edit')->with([
             "judul" => "Edit Pantai",
             'data' => $beachEdit
@@ -80,41 +82,44 @@ class BeachController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+   public function update(Request $request, $id)
 {
+    // @dd($request->all());
     $request->validate([
         'nama' => 'required',
         'deskripsi' => 'required',
         'lokasi' => 'required',
         'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-    ], [
-        'nama.required' => 'Nama harus diisi',
-        'deskripsi.required' => 'Deskripsi harus diisi',
-        'lokasi.required' => 'Lokasi harus diisi',
-        'gambar.mimes' => 'Gambar harus berupa jpeg, png, jpg, gif, atau svg',
-        'gambar.max' => 'Gambar tidak boleh lebih dari 2 MB',
     ]);
 
     $beach = Beach::findOrFail($id);
 
-    $data = $request->except('_token', '_method');
-
     if ($request->hasFile('gambar')) {
-        // Hapus gambar lama jika bukan default
-        if ($beach->gambar != 'default.jpg') {
-            unlink(public_path('Pantai/' . $beach->gambar));
-        }
-
-        // Upload gambar baru
-        $namaGambar = $request->file('gambar')->hashName();
-        $request->file('gambar')->move(public_path('Pantai'), $namaGambar);
-        $data['gambar'] = $namaGambar;
+        //  upload gambar baru
+        $gambar = $request->file('gambar');
+        $gambar = $gambar->storeAs('public/Pantai', $gambar->hashName());
+    
+        // hapus gambar lama
+        Storage::delete($beach->gambar);
+    
+        $beach->update([
+            'nama' => $request->nama,
+            'lokasi' => $request->lokasi,
+            'deskripsi' => $request->deskripsi,
+            'gambar' => $gambar,
+        ]);
+    } else {
+        $beach->update([
+            'nama' => $request->nama,
+            'lokasi' => $request->lokasi,
+            'deskripsi' => $request->deskripsi,
+        ]);
     }
-
-    $beach->update($data);
+    
 
     return redirect()->route('beach.index')->with('success', 'Pantai berhasil diubah');
 }
+
 
 
     /**

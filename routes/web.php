@@ -17,12 +17,17 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+
 Route::get('/', function () {
     return view('layout.main');
 });
 
-Route::get('/login', [AuthController::class, 'index'])->name('index');
-Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+// login 
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'authenticate'])->name('auth.authenticate');
+
+// logout
+Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 // index pantai
 Route::get('/beach',[BeachController::class,'index'])->name('beach.index');

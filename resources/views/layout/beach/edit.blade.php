@@ -31,7 +31,7 @@
                     @if (old('gambar', $data->gambar) != null)
                     <div class="mt-1 text-2xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0 focus:outline-none border-0"></div>
                         <img src="{{ asset('Pantai/' . old('gambar', $data->gambar)) }}" alt="Gambar">
-                        <input type="hidden" name="gambar" id="gambar" class="mt-1 text-2xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0 focus:outline-none border-0" value="{{ old('gambar', $data->gambar) }}"/>
+                        <input type="hidden" name="gambarLama" id="gambarLama" class="mt-1 text-2xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0 focus:outline-none border-0" value="{{ old('gambar', $data->gambar) }}"/>
                         <input type="file" name="gambar" id="gambar" class="mt-1 text-2xl leading-6 text-gray-700 sm:col-span-2 sm:mt-0 focus:outline-none border-0" />
                     @endif
                 </div>
