@@ -42,10 +42,20 @@ Route::put('beach/{id}',[BeachController::class,'update'])->name('beach.update')
 // hapus database
 Route::delete('/beach/{id}', [BeachController::class, 'destroy'])->name('beach.destroy');
 
+
+// SEJARAH
 Route::get('/sejarah',[SejarahController::class,'index'])->name('sejarah.index');
 Route::get('/sejarah/{id}',[SejarahController::class,'edit']);
 Route::put('/sejarah/{id}', [SejarahController::class, 'update'])->name('sejarah.update');
 
-Route::get('/geografi',[GeografiController::class,'index']);
 
-Route::get('/pariwisata',[PariwisataController::class,'index']);
+// GEOGRAFI
+Route::get('/geografi',[GeografiController::class,'index'])->name('geografi.index');
+Route::get('geografi/{id}',[GeografiController::class,'edit']);
+Route::put('geografi/{id}', [GeografiController::class, 'update'])->name('geografi.update');
+
+
+// PARIWISATA
+Route::get('/pariwisata',[PariwisataController::class,'index'])->name('pariwisata.index');
+Route::get('/pariwisata/{id}',[PariwisataController::class,'edit']);
+Route::put('/pariwisata/{id}', [PariwisataController::class, 'update'])->name('pariwisata.update');
