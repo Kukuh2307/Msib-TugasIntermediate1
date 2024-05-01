@@ -43,6 +43,7 @@ Route::put('beach/{id}',[BeachController::class,'update'])->name('beach.update')
 Route::delete('/beach/{id}', [BeachController::class, 'destroy'])->name('beach.destroy');
 
 Route::get('/sejarah',[SejarahController::class,'index']);
+Route::get('/sejarah/edit',[SejarahController::class,'edit']);
 
 Route::get('/geografi',[GeografiController::class,'index']);
 

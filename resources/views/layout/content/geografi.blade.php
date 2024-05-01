@@ -3,6 +3,7 @@
 @section('content')
     <div class="text-left">
       <h3 class="mt-[2.9rem] text-3xl pl-10 font-semibold hover:text-blue-400 hover:transition-all text-center">{{ $judul }}</h3>
+      <a href="geografi/edit" class="ml-8 text-indigo-500 bg-indigo-100  h-10 rounded-md hover:text-indigo-900 flex justify-center items-center w-32">Edit</a>
     </div>
     <div class="mt-6 border-t border-gray-100 text-left ml-10">
       <dl class="divide-y divide-gray-100">

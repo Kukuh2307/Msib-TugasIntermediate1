@@ -14,4 +14,11 @@ class SejarahController extends Controller
             "data"=> ProfileKotaku::first(),
         ]);
     }
+
+    public function edit(){
+        return view("layout.content.sejarah")->with([
+            "judul"=> "Edit Sejarah",
+            "data"=> ProfileKotaku::first(),
+        ]);
+    }
 }
